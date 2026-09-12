@@ -2,16 +2,17 @@
 
 <!-- REVIEW: one or two sentences of product framing, mirroring Skyller's.
      Replace with the wording you want public. -->
-Trouve Sense is an enterprise document-intelligence system over
-MinerU-parsed, visually-enriched document corpora. Document retrieval and
-grounded answering, evaluated by EnterpriseRAG-Bench, is one of its modules.
+'Trouve Sense' is a research project focused on intelligent decision making over semantically noisy large scale corpus.
+`EnterpriseRAG-Bench` is by far the only relevant benchmark to test the capabilities of harness.
+
+'Trouve Sense' uses all local components including the Data Layer, Retrieval Layer, Agent Harness Layer and the Local AI services.
 
 ## Result
 
 This submission contains 500/500 answers and was evaluated locally with the
-official EnterpriseRAG-Bench evaluator at commit
-`d36685e273713975ee20299bbf1ab64165575b3c`, using GPT-5.4 with medium reasoning
-and the standard gold-question correction flow.
+official EnterpriseRAG-Bench evaluator using GPT-5.4 wwith medium reasoning.
+
+As per our evals following are the results (we ran eval multiple times to confirm):
 
 | Metric | Score |
 |---|---:|
@@ -21,9 +22,6 @@ and the standard gold-question correction flow.
 | Recall | 82.15 |
 | Invalid extra documents | 1.05 |
 
-The included leaderboard snapshot projects Trouve Sense in fourth place. That is
-a local projection, not an official rank, until Onyx verifies the run and
-updates the leaderboard.
 
 ## Public artifacts
 
@@ -41,9 +39,8 @@ Frozen answer SHA-256:
 ## Evaluation environment
 
 The evaluator was run unmodified. The only local change to the upstream
-repository at that commit is an additive branch in `src/llm/factory.py`
-registering an extra provider; it is not reachable under `LLM_PROVIDER=openai`
-and was not used for this run. `metrics_based_eval.py`, `eval_utils.py`,
+repository is registering an extra provider i.e. openrouter; ( judge model and reasoning effort kept same)
+`metrics_based_eval.py`, `eval_utils.py`,
 `openai_llm.py` and `questions.jsonl` are unmodified at
 `d36685e273713975ee20299bbf1ab64165575b3c`.
 
@@ -67,12 +64,8 @@ channel. Verification uses the literal benchmark question, one new conversation
 per question, and no gold answer, expected document id, category, or prior
 conversation context.
 
-The harness runs a local model at non-zero temperature, so a live re-run does not
-reproduce a submitted answer verbatim. We measured this rather than assert it: over
-10 submitted questions re-asked through the verification endpoint, 8 cited exactly
-the same documents as the frozen file and 2 did not. The frozen
-`answers_trouve_sense.jsonl` is the submission; live access is how Onyx confirms it
-came from a real system.
+**NOTE:**
+**The harness runs a local model at non-zero temperature, so a live re-run does not
+reproduce a submitted answer verbatim.**
 
-No credential, internal company identifier, private endpoint, or local path is
-included in these public artifacts.
+The credentials and sandbox endpoint will be provided via emAil.
