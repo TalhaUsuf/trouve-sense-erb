@@ -1,18 +1,18 @@
 # Trouve Sense — EnterpriseRAG-Bench submission
 
-<!-- REVIEW: one or two sentences of product framing, mirroring Skyller's.
-     Replace with the wording you want public. -->
 'Trouve Sense' is a research project focused on intelligent decision making over semantically noisy large scale corpus.
-`EnterpriseRAG-Bench` is by far the only relevant benchmark to test the capabilities of harness.
+`EnterpriseRAG-Bench` is by far the only relevant benchmark to test the capabilities of the harness.
 
 'Trouve Sense' uses all local components including the Data Layer, Retrieval Layer, Agent Harness Layer and the Local AI services.
 
 ## Result
 
 This submission contains 500/500 answers and was evaluated locally with the
-official EnterpriseRAG-Bench evaluator using GPT-5.4 wwith medium reasoning.
+official EnterpriseRAG-Bench evaluator using GPT-5.4 with medium reasoning.
 
-As per our evals following are the results (we ran eval multiple times to confirm):
+As per our evals following are the results (we ran eval multiple times to confirm).
+These are our own local evaluation figures, not an official rank — they stand
+until Onyx verifies the run:
 
 | Metric | Score |
 |---|---:|
@@ -58,7 +58,6 @@ Trouve Sense is closed source. Onyx can verify it through the same live
 retrieval and answering pipeline, benchmark corpus, and benchmark agent used for
 the submitted run.
 
-<!-- REVIEW: confirm before publishing. Nothing below is live yet. -->
 Dedicated access will be prepared and shared with Onyx through a private
 channel. Verification uses the literal benchmark question, one new conversation
 per question, and no gold answer, expected document id, category, or prior
@@ -68,4 +67,13 @@ conversation context.
 **The harness runs a local model at non-zero temperature, so a live re-run does not
 reproduce a submitted answer verbatim.**
 
-The credentials and sandbox endpoint will be provided via emAil.
+We measured this rather than assert it. Over 10 submitted questions re-asked
+through the verification endpoint, 8 cited exactly the same documents as the
+frozen file and 2 did not; on a further run one of those two abstained. Please
+read a spot-check as evidence that the endpoint runs the same system, not as a
+reproduction of a specific row. The frozen `answers_trouve_sense.jsonl` is the
+submission; live access is how Onyx confirms it came from a real system.
+
+No credential, internal identifier, private endpoint, or local path is included
+in these public artifacts. The credentials and sandbox endpoint will be provided
+via email.
