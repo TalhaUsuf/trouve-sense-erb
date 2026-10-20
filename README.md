@@ -30,18 +30,22 @@ Questions scored: 500/500; skipped rows: 0.
 | high_level | 10 | 70.00 | 70.00 | 88.00 | 0.00 | 0.00 |
 | info_not_found | 20 | 95.00 | 95.00 | 100.00 | 0.00 | 0.00 |
 
-## Files
+## Files: 500-question submission
 
-- `answers_trouve_sense.jsonl`: submission answers, one line per question with `question_id`, `answer`, `document_ids`.
-- `results_trouve_sense.json`: evaluator output.
-- `questions_updated_trouve_sense.jsonl`: evaluator-updated question set.
-- `systems.yaml`: proposed `trouve_sense` system entry.
-- `eval-provenance.json`: evaluator, question-set and answer hashes, judge settings.
-- `MANIFEST.json`: SHA-256 of every file in this directory.
+Repository root. Frozen.
 
-Frozen answers SHA-256:
+| Path | Purpose | SHA-256 |
+|---|---|---|
+| `answers_trouve_sense.jsonl` | submission answers (`question_id`, `answer`, `document_ids`), 500 rows | `7bd5082ddf74112e0cd7c737a9182331d9353fed83d64a145a05ff9479d8fbbb` |
+| `results_trouve_sense.json` | evaluator output | `db2c55ae59c2016dc50c3dbd26f1bef3615d2ccbe54ab4583a706915805ef618` |
+| `questions_updated_trouve_sense.jsonl` | evaluator-updated question set | `7fcca92646b1c7696c5410733b0807fa97e9dcb91ad81c57d275596e5d730ed5` |
+| `systems.yaml` | proposed `trouve_sense` system entry | `b812e53d8b64e0b4f29179e15ede4080199bd07c8e93fd17b3bcc5cc88bee396` |
+| `eval-provenance.json` | evaluator, question-set and answer hashes, judge settings | `f6a31b21f83db20315c7ed513ec36f14945fcb951eeecfac6a31fb92e2ed6ee4` |
+| `validator.json` | format-check report for this set | `1c5a6afed1e2d97f6e49516907c38fa872896850885f7b6d96b8c1438d6c38fb` |
 
-`7bd5082ddf74112e0cd7c737a9182331d9353fed83d64a145a05ff9479d8fbbb`
+## Verification
+
+Verification answers were sent to Onyx by email, per their instructions.
 
 ## Evaluation
 
