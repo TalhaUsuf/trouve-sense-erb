@@ -1,0 +1,11 @@
+{
+  "files": {
+    "README.md": "a8e3caf8ce6b89ef496baa48d65fb33a352017440858d55e0f19fada0ad9b552",
+    "answers_trouve_sense.jsonl": "7bd5082ddf74112e0cd7c737a9182331d9353fed83d64a145a05ff9479d8fbbb",
+    "eval-provenance.json": "f6a31b21f83db20315c7ed513ec36f14945fcb951eeecfac6a31fb92e2ed6ee4",
+    "questions_updated_trouve_sense.jsonl": "7fcca92646b1c7696c5410733b0807fa97e9dcb91ad81c57d275596e5d730ed5",
+    "results_trouve_sense.json": "db2c55ae59c2016dc50c3dbd26f1bef3615d2ccbe54ab4583a706915805ef618",
+    "systems.yaml": "43c2d26fd8da37119ede122a278768391de2bc17bb0e119632fe80bc1f801726",
+    "validator.json": "e7a58ab919efae4d65b3eb03ca1488ea3a6a672e92eded46a05a29fd9fc1d733"
+  }
+}

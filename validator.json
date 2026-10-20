@@ -1,0 +1,12 @@
+{
+ "key": "trouve_sense",
+ "pass": true,
+ "overall_score": 88.41,
+ "num_corrected": 13,
+ "average_correctness_pct": 90.8,
+ "average_completeness_pct": 92.52,
+ "average_recall_pct": 93.07,
+ "average_invalid_extra_docs": 0.53,
+ "errors": [],
+ "n_errors": 0
+}

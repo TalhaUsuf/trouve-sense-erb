@@ -1,79 +1,51 @@
-# Trouve Sense — EnterpriseRAG-Bench submission
+# Trouve Sense — EnterpriseRAG-Bench submission (v2)
 
-'Trouve Sense' is a research project focused on intelligent decision making over semantically noisy large scale corpus.
-`EnterpriseRAG-Bench` is by far the only relevant benchmark to test the capabilities of the harness.
-
-'Trouve Sense' uses all local components including the Data Layer, Retrieval Layer, Agent Harness Layer and the Local AI services.
+Self-evaluated results on the 500 core questions, scored with the official
+EnterpriseRAG-Bench evaluator. These are our local figures, not an official rank.
 
 ## Result
 
-This submission contains 500/500 answers and was evaluated locally with the
-official EnterpriseRAG-Bench evaluator using GPT-5.4 with medium reasoning.
-
-As per our evals following are the results (we ran eval multiple times to confirm).
-These are our own local evaluation figures, not an official rank — they stand
-until Onyx verifies the run:
-
 | Metric | Score |
 |---|---:|
-| **Overall** | **75.17** |
-| Correctness | 79.80 |
-| Completeness | 81.78 |
-| Recall | 82.15 |
-| Invalid extra documents | 1.05 |
+| **Overall** | **88.41** |
+| Correctness | 90.80 |
+| Completeness | 92.52 |
+| Recall | 93.07 |
+| Invalid extra documents | 0.53 |
 
+Questions scored: 500/500; skipped rows: 0; questions corrected by the three-judge consensus flow: 13.
 
-## Public artifacts
+### By question type
 
-- `answers_trouve_sense.jsonl`: exact submission format, with only
-  `question_id`, `answer`, and `document_ids` per line.
-- `results_trouve_sense.json`: official evaluator output.
-- `questions_updated_trouve_sense.jsonl`: complete evaluator-updated question
-  set (14 questions corrected by the three-judge consensus flow).
-- `systems.yaml`: proposed upstream `trouve_sense` system entry.
+| Question type | N | Overall | Correctness | Completeness | Recall | Invalid extra docs |
+|---|---:|---:|---:|---:|---:|---:|
+| basic | 175 | 96.00 | 97.14 | 96.79 | 97.71 | 0.13 |
+| semantic | 125 | 83.95 | 87.20 | 86.55 | 87.20 | 0.43 |
+| intra_document_reasoning | 40 | 100.00 | 100.00 | 100.00 | 100.00 | 0.00 |
+| project_related | 40 | 59.77 | 67.50 | 82.31 | 83.65 | 3.27 |
+| constrained | 30 | 93.25 | 96.67 | 96.58 | 100.00 | 0.43 |
+| conflicting_info | 20 | 90.33 | 95.00 | 92.83 | 92.50 | 0.25 |
+| completeness | 20 | 67.01 | 70.00 | 80.02 | 77.34 | 1.10 |
+| miscellaneous | 20 | 98.75 | 100.00 | 98.75 | 100.00 | 0.00 |
+| high_level | 10 | 70.00 | 70.00 | 88.00 | 0.00 | 0.00 |
+| info_not_found | 20 | 95.00 | 95.00 | 100.00 | 0.00 | 0.00 |
 
-Frozen answer SHA-256:
+## Files
 
-`069a83e77ccb76705aaac7f38b057f19cf82b67deefa5d1d509e3b2f05a3ee04`
+- `answers_trouve_sense.jsonl`: submission answers, one line per question with `question_id`, `answer`, `document_ids`.
+- `results_trouve_sense.json`: evaluator output.
+- `questions_updated_trouve_sense.jsonl`: evaluator-updated question set.
+- `systems.yaml`: proposed `trouve_sense` system entry.
+- `eval-provenance.json`: evaluator, question-set and answer hashes, judge settings.
+- `MANIFEST.json`: SHA-256 of every file in this directory.
 
-## Evaluation environment
+Frozen answers SHA-256:
 
-The evaluator was run unmodified. The only local change to the upstream
-repository is registering an extra provider i.e. openrouter; ( judge model and reasoning effort kept same)
-`metrics_based_eval.py`, `eval_utils.py`,
-`openai_llm.py` and `questions.jsonl` are unmodified at
-`d36685e273713975ee20299bbf1ab64165575b3c`.
+`7bd5082ddf74112e0cd7c737a9182331d9353fed83d64a145a05ff9479d8fbbb`
 
-Citation stripping and the document-correction flow were both left ON, at the
-evaluator's defaults. All 500 questions are scored; `skipped_rows` is 0.
+## Evaluation
 
-The judge was reached through an OpenAI-compatible gateway, which resolved
-`gpt-5.4` to snapshot `gpt-5.4-20260305` at medium reasoning effort. Exact
-snapshot and provider-endpoint identity with Onyx's own evaluation runs is
-therefore not something we can assert.
-
-## Closed-source reproducibility
-
-Trouve Sense is closed source. Onyx can verify it through the same live
-retrieval and answering pipeline, benchmark corpus, and benchmark agent used for
-the submitted run.
-
-Dedicated access will be prepared and shared with Onyx through a private
-channel. Verification uses the literal benchmark question, one new conversation
-per question, and no gold answer, expected document id, category, or prior
-conversation context.
-
-**NOTE:**
-**The harness runs a local model at non-zero temperature, so a live re-run does not
-reproduce a submitted answer verbatim.**
-
-We measured this rather than assert it. Over 10 submitted questions re-asked
-through the verification endpoint, 8 cited exactly the same documents as the
-frozen file and 2 did not; on a further run one of those two abstained. Please
-read a spot-check as evidence that the endpoint runs the same system, not as a
-reproduction of a specific row. The frozen `answers_trouve_sense.jsonl` is the
-submission; live access is how Onyx confirms it came from a real system.
-
-No credential, internal identifier, private endpoint, or local path is included
-in these public artifacts. The credentials and sandbox endpoint will be provided
-via email.
+- Evaluator: upstream `metrics_based_eval` at `d36685e273713975ee20299bbf1ab64165575b3c`, unmodified (clean checkout).
+- Judge: `gpt-5.4`, medium reasoning, reached through OpenRouter (provider OpenAI).
+- Document correction and citation stripping: ON (evaluator defaults).
+- One evaluator invocation over all 500 questions.
