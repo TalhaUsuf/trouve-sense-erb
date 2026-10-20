@@ -1,4 +1,4 @@
-# Trouve Sense — EnterpriseRAG-Bench submission (v2)
+# AHOY Labs — EnterpriseRAG-Bench submission (v2)
 
 Self-evaluated results on the 500 core questions, scored with the official
 EnterpriseRAG-Bench evaluator. These are our local figures, not an official rank.
