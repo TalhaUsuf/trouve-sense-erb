@@ -13,7 +13,7 @@ EnterpriseRAG-Bench evaluator. These are our local figures, not an official rank
 | Recall | 93.07 |
 | Invalid extra documents | 0.53 |
 
-Questions scored: 500/500; skipped rows: 0; questions corrected by the three-judge consensus flow: 13.
+Questions scored: 500/500; skipped rows: 0.
 
 ### By question type
 
