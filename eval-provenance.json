@@ -6,16 +6,16 @@
   "eval_utils_sha256": "c84b59fbb1b0683f830435ae4c5ff5fc6d81a4d799c0e0de3831e73fa77ed53c",
   "openai_llm_sha256": "c9f7e3ed4b98589a5c1fdfeb6501f72be6643fd46aa133a4fca8995e50fb5e01",
   "questions_sha256": "f9524b9157cd43aae36b99333a124738804306ea6d07f332d49faa6d3d147905",
-  "answers_sha256": "7bd5082ddf74112e0cd7c737a9182331d9353fed83d64a145a05ff9479d8fbbb",
+  "answers_sha256": "f10b45d7fa8cece5b5cff772f933b75513b7470e66c93521e082bb5d51fb28ac",
   "correction": true,
   "citation_stripping": true,
   "judge_provider": "openai",
   "judge_model": "openai/gpt-5.4",
   "judge_reasoning_effort": "medium",
   "judge_gateway": "OpenRouter (provider: OpenAI)",
-  "judge_requests": 3684,
+  "judge_requests": 3628,
   "evaluator_invocations": 1,
-  "parallelism": 192,
+  "parallelism": 24,
   "upstream_argv": [
     "python3",
     "-m",
@@ -31,7 +31,7 @@
     "--uuid-index-cache-file",
     "uuid_index.json",
     "--parallelism",
-    "192"
+    "24"
   ],
   "_note": "Absolute paths replaced by basenames for public release; the sha256 fields above are the identity that matters."
 }
