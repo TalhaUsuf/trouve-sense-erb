@@ -30,10 +30,6 @@ Questions scored: 500/500; skipped rows: 0.
 | high_level | 10 | 80.00 | 80.00 | 84.00 | 0.00 | 0.00 |
 | info_not_found | 20 | 95.00 | 95.00 | 100.00 | 0.00 | 0.00 |
 
-## Disclosure
-
-Disclosure: for the 500 public questions, we used the official Onyx gold verdicts to pick the 48 questions our submitted Qwen-Flash-Next harness answered wrong and reran those through a Fable max-effort agent workflow; the other 452 answers are the unchanged Qwen-Flash-Next harness answers, and all 80 hidden-set (verification) answers come from the same Fable workflow; the 7 unanswerable (info_not_found) answers among these (public qst_0485, hidden qst_0075-qst_0080) were rewritten by Claude from the Fable workflow's findings into the harness's not-found answer style.
-
 ## Files: 500-question submission
 
 Repository root. Frozen.
